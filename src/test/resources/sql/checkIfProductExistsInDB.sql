@@ -1,0 +1,1 @@
+SELECT FROM food WHERE food_name = (:food_name)

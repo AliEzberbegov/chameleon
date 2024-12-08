@@ -1,0 +1,1 @@
+DELETE FROM food WHERE food_name = Яблоко;
