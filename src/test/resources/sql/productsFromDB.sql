@@ -1,1 +1,1 @@
-SELECT * FROM FOOD
+SELECT * FROM food;

@@ -10,32 +10,27 @@
         <Result>
             <FieldInteger name="food_id" locator="food_id"/>
             <FieldString name="food_name" locator="food_name"/>
-            <FieldInteger name="food_type" locator="food_type"/>
-            <FieldString name="food-exotic" locator="food_exotic"/>
+            <FieldString name="food_type" locator="food_type"/>
+            <FieldBoolean name="food-exotic" locator="food_exotic"/>
         </Result>
     </Query>
-    <Query name="Проверка наличия товара в БД" statement="DELETE FROM food WHERE food_name = Кабачок;">
+    <Query name="Проверка наличия товара в БД" statement="classpath:/sql/checkIfProductExistsInDB.sql">
         <Result>
             <FieldInteger name="food_id" locator="food_id"/>
             <FieldString name="food_name" locator="food_name"/>
-            <FieldInteger name="food_type" locator="food_type"/>
-            <FieldString name="food-exotic" locator="food_exotic"/>
+            <FieldString name="food_type" locator="food_type"/>
+            <FieldBoolean name="food-exotic" locator="food_exotic"/>
         </Result>
     </Query>
-    <Query name="Вывод дублированных товаров" statement="classpath:/sql/checkIfProductExistsInDB.sql">
+    <Query name="Проверка наличия дублированных товаров" statement="classpath:/sql/searchMatchesInDB.sql">
         <Result>
-            <FieldInteger name="food_id" locator="food_id"/>
             <FieldString name="food_name" locator="food_name"/>
-            <FieldInteger name="food_type" locator="food_type"/>
-            <FieldString name="food-exotic" locator="food_exotic"/>
         </Result>
     </Query>
     <Query name="Удаление добавленных товаров" statement="classpath:/sql/deleteProductsFromDB.sql">
-        <Result>
-            <FieldInteger name="food_id" locator="food_id"/>
+        <Params>
             <FieldString name="food_name" locator="food_name"/>
-            <FieldInteger name="food_type" locator="food_type"/>
-            <FieldString name="food-exotic" locator="food_exotic"/>
-        </Result>
+            <FieldString name="food_name1" locator="food_name1"/>
+        </Params>
     </Query>
 </DbGears>
