@@ -15,6 +15,9 @@
         </Result>
     </Query>
     <Query name="Проверка наличия товара в БД" statement="classpath:/sql/checkIfProductExistsInDB.sql">
+        <Params>
+            <FieldString name="food_name" locator="food_name"/>
+        </Params>
         <Result>
             <FieldInteger name="food_id" locator="food_id"/>
             <FieldString name="food_name" locator="food_name"/>
@@ -23,6 +26,9 @@
         </Result>
     </Query>
     <Query name="Проверка наличия дублированных товаров" statement="classpath:/sql/searchMatchesInDB.sql">
+        <Params>
+            <FieldString name="food_name" locator="food_name"/>
+        </Params>
         <Result>
             <FieldString name="food_name" locator="food_name"/>
         </Result>
